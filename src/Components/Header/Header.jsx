@@ -8,7 +8,7 @@ function Header() {
       <HeaderBackground>
         <HeaderBox>
           <HeaderLogo>
-            <img src="../../imgs/motul.svg" alt="logo" />
+            <img src="motul.svg" alt="logo" />
           </HeaderLogo>
           <Navbar />
         </HeaderBox>
