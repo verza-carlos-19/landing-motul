@@ -8,7 +8,10 @@ function Header() {
       <HeaderBackground>
         <HeaderBox>
           <HeaderLogo>
-            <img src="motul.svg" alt="logo" />
+            <img
+              src="https://res.cloudinary.com/ds1lnxkfc/image/upload/v1704469659/motul_u2bxul.svg"
+              alt="logo"
+            />
           </HeaderLogo>
           <Navbar />
         </HeaderBox>
