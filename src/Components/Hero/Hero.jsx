@@ -13,7 +13,7 @@ function Hero() {
     <>
       <HeroBox>
         <HeroBackground>
-          <img src="../imgs/fondo.jpg" alt="" />
+          <img src="../../imgs/fondo.jpg" alt="" />
         </HeroBackground>
         <BoxContentHero>
           <TitleHero>¡Desata la Velocidad!</TitleHero>
