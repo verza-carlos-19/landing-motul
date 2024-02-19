@@ -1,18 +1,23 @@
-import ContainerProds from "./Components/ContainerProds/ContainerProds";
-import Footer from "./Components/Footer/Footer";
-import Header from "./Components/Header/Header";
-import Hero from "./Components/Hero/Hero";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./Components/Layout/Layout";
+import Home from "./pages/Home";
+import Productos from "./pages/Productos/Productos";
+import About from "./pages/About/About";
+import Contact from "./pages/Contact/Contact";
 
 function App() {
   return (
     <>
-      <Header />
-      <Layout>
-        <Hero />
-        <ContainerProds />
-      </Layout>
-      <Footer />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Layout></Layout>}>
+            <Route index element={<Home />} />
+            <Route path="nosotros" element={<About />} />
+            <Route path="productos" element={<Productos />} />
+            <Route path="contacto" element={<Contact />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }

@@ -8,27 +8,16 @@ import {
   TitleHero,
 } from "./HeroStyles";
 
-function Hero() {
+function Hero({ title, image, text }) {
   return (
     <>
       <HeroBox>
         <HeroBackground>
-          <img
-            src="https://res.cloudinary.com/ds1lnxkfc/image/upload/v1704468646/fondo_nlvvmo.jpg"
-            alt=""
-          />
+          <img src={image} alt="hero" />
         </HeroBackground>
         <BoxContentHero>
-          <TitleHero>¡Desata la Velocidad!</TitleHero>
-          <TextHero>
-            Del rugido del <SpecialTextHero>Motocross</SpecialTextHero> al
-            desafío del <SpecialTextHero>Rally Dakar</SpecialTextHero>, de la
-            adrenalina del <SpecialTextHero>MotoGP</SpecialTextHero> a la
-            precisión de la <SpecialTextHero>Fórmula 1</SpecialTextHero>:
-            nuestros lubricantes con tecnología sintética avanzada garantizan
-            rendimiento inigualable, protección suprema y máxima potencia para
-            los verdaderos campeones del motorsport.
-          </TextHero>
+          <TitleHero>{title}</TitleHero>
+          <TextHero>{text}</TextHero>
         </BoxContentHero>
       </HeroBox>
     </>
