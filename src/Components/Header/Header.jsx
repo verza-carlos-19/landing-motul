@@ -13,6 +13,7 @@ function Header() {
               alt="logo"
             />
           </HeaderLogo>
+
           <Navbar />
         </HeaderBox>
       </HeaderBackground>

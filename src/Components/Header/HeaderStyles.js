@@ -16,10 +16,10 @@ export const HeaderBackground = styled.header`
     rgba(0, 0, 0, 1) 65%
   );
 `;
-export const HeaderBox = styled.div`
+export const HeaderBox = styled.article`
   max-width: 1200px;
   width: 100%;
-  padding: 0.3rem 2rem 0.5rem 2rem;
+  padding: 1.3rem 2rem 1.5rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
