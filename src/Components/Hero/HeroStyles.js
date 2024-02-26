@@ -38,7 +38,7 @@ export const BoxContentHero = styled.div`
   }
   @media (max-width: 500px) {
     top: -29rem;
-    margin-bottom: -28.4rem;
+    margin-bottom: -26.8rem;
     gap: 2rem;
   }
 `;

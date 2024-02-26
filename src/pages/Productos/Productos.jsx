@@ -1,6 +1,7 @@
 import React from "react";
 import Hero from "../../Components/Hero/Hero";
 import ContainerProds from "../../Components/ContainerProds/ContainerProds";
+import { productsData } from "../../data/products";
 
 function Productos() {
   return (
@@ -8,13 +9,13 @@ function Productos() {
       <Hero
         title={"Nuestros Mejores Productos"}
         image={
-          "https://res.cloudinary.com/ds1lnxkfc/image/upload/v1704468646/fondo_nlvvmo.jpg"
+          "https://res.cloudinary.com/ds1lnxkfc/image/upload/v1708437346/MicrosoftTeams-image__2_n3kbjz.jpg"
         }
         text={
-          "Explora la mejor selección de productos Motul para potenciar y cuidar tu vehículo al máximo rendimiento."
+          "Explora nuestra selección de productos Motul: calidad premium para el cuidado y mantenimiento de tu vehículo. Desde lubricantes hasta aditivos, encuentra todo lo que necesitas para un rendimiento óptimo."
         }
       />
-      <ContainerProds />
+      <ContainerProds lenght={productsData.complete} />
     </>
   );
 }

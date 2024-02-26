@@ -7,13 +7,14 @@ import {
 } from "./ContainerProdsStyles";
 import { productsData } from "../../data/products";
 
-function ContainerProds() {
+function ContainerProds({ lenght }) {
+  const arrayProp = lenght;
   return (
     <>
       <ProductsContiner>
         <Title>Productos</Title>
         <ProductsGallery>
-          {productsData.map((element) => {
+          {arrayProp.map((element) => {
             return (
               <CardProduct
                 key={element.id}
