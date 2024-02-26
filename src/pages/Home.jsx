@@ -3,6 +3,7 @@ import ContainerProds from "../Components/ContainerProds/ContainerProds";
 import Hero from "../Components/Hero/Hero";
 import { productsData } from "../data/products";
 import CardInfo from "../Components/CardInfo/CardInfo";
+import ButtonSpecial from "../Components/ButtonSpecial/ButtonSpecial";
 
 function Home() {
   return (
@@ -19,11 +20,11 @@ function Home() {
       <CardInfo
         dir={"left"}
         img={
-          "https://res.cloudinary.com/ds1lnxkfc/image/upload/v1708892425/Motul_ready_for_another_thrilling_ride_in_MotoGP_2019__Lukasz_Swiderek_fvavpp.jpg"
+          "https://res.cloudinary.com/ds1lnxkfc/image/upload/v1708955232/how-to-drift-web-680_1_kn8s12.webp"
         }
-        title={"MotoGP 2024"}
+        title={"FormulaD 2024"}
         text={
-          "La velocidad a tope del MotoGp siempre va acompañada de un buen aceite motul V300"
+          "Potenciando el drift con su gama de lubricantes de alto rendimiento. Donde la precisión y la potencia se encuentran en la pista"
         }
       />
       <CardInfo
@@ -37,6 +38,7 @@ function Home() {
         }
       />
       <ContainerProds lenght={productsData.short} />
+      <ButtonSpecial />
     </>
   );
 }

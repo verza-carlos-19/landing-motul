@@ -24,14 +24,22 @@ export const BackBox = styled.div`
       var(--c3) 0 180deg
     );
   background-size: var(--s) calc(var(--s) * 0.577);
-  animation: move 14s linear infinite;
+  animation: moveright 14s linear infinite;
 
-  @keyframes move {
+  @keyframes moveright {
     0% {
       background-position: 0 0;
     }
     100% {
       background-position: 200px 0px;
+    }
+  }
+  @keyframes moveleft {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: -200px 0px;
     }
   }
 `;
@@ -56,7 +64,7 @@ export const ArticleText = styled.p`
 `;
 export const TitleText = styled.h2`
   color: white;
-  font-size: 4rem;
+  font-size: 3rem;
   margin: 0;
   filter: drop-shadow(2px 8px 20px black);
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;

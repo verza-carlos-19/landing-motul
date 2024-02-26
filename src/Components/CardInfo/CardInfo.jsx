@@ -12,7 +12,12 @@ function CardInfo({ dir, img, title, text }) {
   let container = "";
   if (dir === "left") {
     container = (
-      <BackBox style={{ flexDirection: "row-reverse" }}>
+      <BackBox
+        style={{
+          flexDirection: "row-reverse",
+          animation: "moveleft 14s linear infinite",
+        }}
+      >
         <BoxInfo>
           <TitleText>{title}</TitleText>
           <ArticleText>{text}</ArticleText>
