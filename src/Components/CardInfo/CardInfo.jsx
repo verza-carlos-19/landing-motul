@@ -1,7 +1,8 @@
 import React from "react";
 import {
   ArticleText,
-  BackBox,
+  BackBoxLeft,
+  BackBoxright,
   BoxInfo,
   PhotoContainerLeft,
   PhotoContainerRight,
@@ -12,12 +13,7 @@ function CardInfo({ dir, img, title, text }) {
   let container = "";
   if (dir === "left") {
     container = (
-      <BackBox
-        style={{
-          flexDirection: "row-reverse",
-          animation: "moveleft 14s linear infinite",
-        }}
-      >
+      <BackBoxLeft>
         <BoxInfo>
           <TitleText>{title}</TitleText>
           <ArticleText>{text}</ArticleText>
@@ -25,11 +21,11 @@ function CardInfo({ dir, img, title, text }) {
         <PhotoContainerLeft>
           <img src={img} alt="" />
         </PhotoContainerLeft>
-      </BackBox>
+      </BackBoxLeft>
     );
   } else if (dir === "right") {
     container = (
-      <BackBox>
+      <BackBoxright>
         <BoxInfo>
           <TitleText>{title}</TitleText>
           <ArticleText>{text}</ArticleText>
@@ -37,11 +33,11 @@ function CardInfo({ dir, img, title, text }) {
         <PhotoContainerRight>
           <img src={img} alt="" />
         </PhotoContainerRight>
-      </BackBox>
+      </BackBoxright>
     );
   } else {
     container = (
-      <BackBox style={{ flexDirection: "row-reverse" }}>
+      <BackBoxLeft>
         <BoxInfo>
           <TitleText>{title}</TitleText>
           <ArticleText>{text}</ArticleText>
@@ -49,7 +45,7 @@ function CardInfo({ dir, img, title, text }) {
         <PhotoContainerLeft>
           <img src={img} alt="" />
         </PhotoContainerLeft>
-      </BackBox>
+      </BackBoxLeft>
     );
   }
   return <>{container}</>;

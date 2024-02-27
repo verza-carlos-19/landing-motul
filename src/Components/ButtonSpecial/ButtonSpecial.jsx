@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { ButtonStyle, ButtonStyled } from "./ButtonSpecialStyles";
+import { ButtonStyled } from "./ButtonSpecialStyles";
 function ButtonSpecial() {
   return (
     <>

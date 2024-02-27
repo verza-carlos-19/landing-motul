@@ -1,13 +1,5 @@
 import styled from "styled-components";
 
-export const ButtonStyle = styled.button`
-  padding: 1rem;
-  font-size: 1.5rem;
-  color: navajowhite;
-  background-color: #f92121;
-  border: 3px solid white;
-`;
-
 export const ButtonStyled = styled.button`
   width: 230px;
   height: 48px;
@@ -15,7 +7,7 @@ export const ButtonStyled = styled.button`
   align-items: center;
   justify-content: center;
   background-color: rgb(15, 15, 15);
-  border: none;
+  border: 3px solid #f92121;
   color: white;
   font-weight: 600;
   gap: 8px;
@@ -26,7 +18,7 @@ export const ButtonStyled = styled.button`
   transition-duration: 1s;
 
   &::before {
-    width: 230px;
+    width: 224px;
     height: 230px;
     position: absolute;
     content: "";
