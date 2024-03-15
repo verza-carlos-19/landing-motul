@@ -1,7 +1,6 @@
 import styled from "styled-components";
 export const NavbarBox = styled.nav`
-  width: 20%;
-  padding-right: 2rem;
+  width: fit-content;
   transition: all 1s;
   display: flex;
   @media (max-width: 600px) {
@@ -31,9 +30,12 @@ export const NavbarBoxRes = styled.nav`
 `;
 export const NavbarList = styled.ul`
   width: 100%;
+  height: fit-content;
   display: flex;
-  justify-content: end;
+  justify-content: center;
   gap: 1rem;
+  padding: 0;
+  margin: 0;
   list-style: none;
   @media (max-width: 600px) {
     width: 100%;
@@ -46,6 +48,20 @@ export const NavbarList = styled.ul`
     align-items: center;
     flex-direction: column;
   }
+  & a > li::after {
+    content: "";
+    width: 0;
+    height: 3px;
+    display: block;
+    background-color: white;
+    position: relative;
+    top: 100%;
+    left: 0;
+    transition: all 0.2s ease-in-out;
+  }
+  & a:hover > li::after {
+    width: 100%;
+  }
 `;
 export const ListItem = styled.li`
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -53,12 +69,12 @@ export const ListItem = styled.li`
   transition: all 0.5s ease-in-out;
   &:hover {
     cursor: pointer;
-    text-decoration: underline;
   }
   @media (max-width: 600px) {
     font-size: 2rem;
   }
 `;
+
 export const BurgerOpen = styled.div`
   position: absolute;
   display: none;

@@ -17,6 +17,19 @@ export const BoxCard = styled.div`
     scale: 0.9;
   }
 `;
+export const CategoryCard = styled.span`
+  color: white;
+  border: none;
+  border-radius: 3px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 600;
+  font-size: 0.8rem;
+  padding: 0.4rem 1.3rem;
+  position: relative;
+  left: -45%;
+  background-color: #f92121bd;
+  margin-bottom: -15px;
+`;
 export const TitleCard = styled.h3`
   color: white;
   text-align: center;

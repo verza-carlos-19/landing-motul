@@ -9,7 +9,7 @@ import {
 } from "./NavbarStyles";
 import { Link } from "react-router-dom";
 import ThemeContext from "../../context/context";
-
+import { useDispatch } from "react-redux";
 function Navbar() {
   const { tema, handleTheme } = useContext(ThemeContext);
   return (

@@ -3,26 +3,49 @@ import {
   BoxCard,
   ButtonCard,
   ButtonsBox,
+  CategoryCard,
   ImageBoxCard,
   PriceCard,
   TitleCard,
 } from "./CardProductStyles";
+import { useDispatch, useSelector } from "react-redux";
+import { addToCart } from "../../Redux/Cart/CartSlice";
+import { formatPrice } from "../../utils/formatPrice";
 
-function CardProduct({ title, image, price }) {
-  const formatPrice = price.toLocaleString("es-AR", {
-    style: "currency",
-    currency: "ARS",
-  });
+function CardProduct({ id, title, image, price, category }) {
+  const dispatch = useDispatch();
+  const { cartItems } = useSelector((state) => state);
+  const prodPrice = formatPrice(price);
+  const totalPrice = formatPrice(
+    cartItems.reduce((acc, item) => {
+      return (acc += item.price * item.quantity);
+    }, 0)
+  );
+
   return (
     <>
       <BoxCard>
+        <CategoryCard>{category}</CategoryCard>
         <TitleCard>{title}</TitleCard>
         <ImageBoxCard>
-          <img src={image} alt={title} />
+          <img src={image} alt={title} width={"80px"} />
         </ImageBoxCard>
-        <PriceCard>{formatPrice}</PriceCard>
+        <PriceCard>{prodPrice}</PriceCard>
         <ButtonsBox>
-          <ButtonCard>COMPRAR</ButtonCard>
+          <ButtonCard
+            onClick={() => {
+              dispatch(addToCart({ image, title, category, price, id }));
+              console.log(
+                formatPrice(
+                  cartItems.reduce((acc, item) => {
+                    return (acc += item.price * item.quantity);
+                  }, 0)
+                )
+              );
+            }}
+          >
+            COMPRAR
+          </ButtonCard>
           <ButtonCard>DETALLES</ButtonCard>
         </ButtonsBox>
       </BoxCard>

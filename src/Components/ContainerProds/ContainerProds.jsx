@@ -5,7 +5,6 @@ import {
   ProductsGallery,
   Title,
 } from "./ContainerProdsStyles";
-import { productsData } from "../../data/products";
 
 function ContainerProds({ lenght }) {
   const arrayProp = lenght;
@@ -18,9 +17,11 @@ function ContainerProds({ lenght }) {
             return (
               <CardProduct
                 key={element.id}
+                id={element.id}
                 title={element.name}
                 image={element.img}
                 price={element.price}
+                category={element.category}
               />
             );
           })}
