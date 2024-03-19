@@ -1,9 +1,13 @@
 import React from "react";
 import Hero from "../../Components/Hero/Hero";
 import ContainerProds from "../../Components/ContainerProds/ContainerProds";
+import Categories from "../../Components/Categories/Categories";
+
+import { useSelector } from "react-redux";
 import { productsData } from "../../data/products";
 
 function Productos() {
+  const { productsFiltered } = useSelector((state) => state.categories);
   return (
     <>
       <Hero
@@ -15,7 +19,8 @@ function Productos() {
           "Explora nuestra selección de productos Motul: calidad premium para el cuidado y mantenimiento de tu vehículo. Desde lubricantes hasta aditivos, encuentra todo lo que necesitas para un rendimiento óptimo."
         }
       />
-      <ContainerProds lenght={productsData.complete} />
+      <Categories />
+      <ContainerProds lenght={productsFiltered} />
     </>
   );
 }

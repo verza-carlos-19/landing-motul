@@ -5,7 +5,9 @@ export const HeroBox = styled.article`
   display: flex;
   align-items: center;
   flex-direction: column;
-  box-shadow: inset 0px -108px 4rem #0d0e0e;
+  box-shadow: inset 0px -108px 0rem #0d0e0ea3, inset 0px -108px 0rem #0d0e0ea3,
+    inset 0px -229px 7rem -97px #0d0e0e, inset 0px -191px 102px #0d0e0e,
+    inset 0px -108px 4rem #0d0e0e;
 `;
 export const TitleHero = styled.h1`
   color: white;

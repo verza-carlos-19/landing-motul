@@ -46,7 +46,7 @@ export const productsData = {
       id: 7,
       name: "MOTUL MOCOOL",
       price: 20000,
-      category: "refigerante",
+      category: "refrigerante",
       img: "https://res.cloudinary.com/ds1lnxkfc/image/upload/v1710170036/imagen_2024-03-11_121347409_hannyl.png",
     },
     {

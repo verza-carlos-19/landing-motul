@@ -3,21 +3,28 @@ import {
   BuyButton,
   CartBox,
   CartHeadBox,
+  CartOverlay,
   CartPrice,
   CartPricingBox,
   CartProductsBox,
   CartTitle,
   ClearButton,
+  ModalCartBox,
 } from "./ModalCartStyles";
 import { IoMdTrash } from "react-icons/io";
 import { GrContract } from "react-icons/gr";
 import { useDispatch, useSelector } from "react-redux";
 import ModalCartCard from "./ModalCartCard/ModalCartCard";
 import { formatPrice } from "../../utils/formatPrice";
-import { clearCart, toggleHiddenCart } from "../../Redux/Cart/CartSlice";
+import {
+  clearCart,
+  toggleHiddenCart,
+  toggleHiddenCheckOut,
+} from "../../Redux/Cart/CartSlice";
+import ModalCheckOut from "./ModalCheckOut/ModalCheckOut";
 
 function ModalCart() {
-  const { cartItems, hidden } = useSelector((state) => state);
+  const { cartItems, hidden } = useSelector((state) => state.cart);
   const dispatch = useDispatch();
   useEffect(() => {
     if (!hidden) {
@@ -33,29 +40,40 @@ function ModalCart() {
   return (
     <>
       {!hidden && (
-        <CartBox>
-          <CartHeadBox>
-            <CartTitle>Shop Cart</CartTitle>
-            <GrContract onClick={() => dispatch(toggleHiddenCart())} />
-          </CartHeadBox>
-          <CartProductsBox>
+        <ModalCartBox>
+          <CartOverlay onClick={() => dispatch(toggleHiddenCart())} />
+          <CartBox>
+            <CartHeadBox>
+              <CartTitle>Shop Cart</CartTitle>
+              <GrContract onClick={() => dispatch(toggleHiddenCart())} />
+            </CartHeadBox>
+            <CartProductsBox>
+              {cartItems.length ? (
+                cartItems.map((item) => (
+                  <ModalCartCard key={item.id} {...item} />
+                ))
+              ) : (
+                <p>No seas amarrete, compra algo</p>
+              )}
+            </CartProductsBox>
             {cartItems.length ? (
-              cartItems.map((item) => <ModalCartCard key={item.id} {...item} />)
-            ) : (
-              <p>No seas amarrete, compra algo</p>
-            )}
-          </CartProductsBox>
-          {cartItems.length ? (
-            <ClearButton onClick={() => dispatch(clearCart())}>
-              limpiar <IoMdTrash />
-            </ClearButton>
-          ) : null}
-          <CartPricingBox>
-            <CartTitle>Total</CartTitle>
-            <CartPrice>{totalPrice}</CartPrice>
-          </CartPricingBox>
-          <BuyButton onClick={() => dispatch(clearCart())}>Pagar</BuyButton>
-        </CartBox>
+              <ClearButton onClick={() => dispatch(clearCart())}>
+                limpiar <IoMdTrash />
+              </ClearButton>
+            ) : null}
+            <CartPricingBox>
+              <CartTitle>Total</CartTitle>
+              <CartPrice>{totalPrice}</CartPrice>
+            </CartPricingBox>
+            <BuyButton
+              onClick={() => {
+                dispatch(toggleHiddenCheckOut());
+              }}
+            >
+              Pagar
+            </BuyButton>
+          </CartBox>
+        </ModalCartBox>
       )}
     </>
   );

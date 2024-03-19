@@ -26,7 +26,7 @@ export const CategoryCard = styled.span`
   font-size: 0.8rem;
   padding: 0.4rem 1.3rem;
   position: relative;
-  left: -45%;
+  left: -40%;
   background-color: #f92121bd;
   margin-bottom: -15px;
 `;

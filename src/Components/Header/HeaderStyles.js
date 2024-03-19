@@ -23,6 +23,13 @@ export const HeaderBox = styled.article`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @media (max-width: 590px) {
+    .cart {
+      position: absolute;
+      right: 32%;
+      top: 25px;
+    }
+  }
 `;
 export const HeaderLogo = styled.div`
   width: 10%;

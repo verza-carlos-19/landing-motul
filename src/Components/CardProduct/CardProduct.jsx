@@ -14,7 +14,7 @@ import { formatPrice } from "../../utils/formatPrice";
 
 function CardProduct({ id, title, image, price, category }) {
   const dispatch = useDispatch();
-  const { cartItems } = useSelector((state) => state);
+  const { cartItems } = useSelector((state) => state.cart);
   const prodPrice = formatPrice(price);
   const totalPrice = formatPrice(
     cartItems.reduce((acc, item) => {

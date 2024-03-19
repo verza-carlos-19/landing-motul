@@ -1,5 +1,22 @@
 import styled from "styled-components";
+export const ModalCartBox = styled.div`
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  right: 0;
+`;
+export const CartOverlay = styled.span`
+  width: 100vw;
+  height: 100vh;
+  backdrop-filter: blur(4px);
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  right: 0;
+`;
 export const CartBox = styled.article`
+  z-index: 1;
   box-sizing: border-box;
   width: 45%;
   position: absolute;
@@ -15,6 +32,10 @@ export const CartBox = styled.article`
   align-items: center;
   gap: 1rem;
   padding: 0.75rem;
+  @media (max-width: 650px) {
+    width: 100%;
+    height: 100%;
+  }
 `;
 export const CartHeadBox = styled.div`
   width: 100%;

@@ -4,8 +4,11 @@ import Hero from "../Components/Hero/Hero";
 import { productsData } from "../data/products";
 import CardInfo from "../Components/CardInfo/CardInfo";
 import ButtonSpecial from "../Components/ButtonSpecial/ButtonSpecial";
+import { useSelector } from "react-redux";
 
 function Home() {
+  const { products } = useSelector((state) => state.categories);
+  const productsRendered = products.short;
   return (
     <>
       <Hero
@@ -37,7 +40,7 @@ function Home() {
           "La velocidad a tope del MotoGp siempre va acompañada de un buen aceite motul V300"
         }
       />
-      <ContainerProds lenght={productsData.short} />
+      <ContainerProds lenght={productsRendered} />
       <ButtonSpecial />
     </>
   );
