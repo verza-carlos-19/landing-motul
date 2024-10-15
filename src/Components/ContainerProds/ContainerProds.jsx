@@ -5,6 +5,7 @@ import {
   ProductsGallery,
   Title,
 } from "./ContainerProdsStyles";
+import Modal from "../ModalConfimation/ModalConfirmation";
 
 function ContainerProds({ lenght }) {
   const arrayProp = lenght;

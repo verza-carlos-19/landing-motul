@@ -25,6 +25,7 @@ export const FooterBottomBox = styled.div`
   p {
     color: black;
     font-size: 0.85rem;
+    font-weight: 400;
     margin-bottom: 0.3rem;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     text-align: center;

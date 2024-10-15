@@ -53,7 +53,7 @@ function ModalCart() {
                   <ModalCartCard key={item.id} {...item} />
                 ))
               ) : (
-                <p>No seas amarrete, compra algo</p>
+                <p>Tus productos apreceran aqui !Compra Algo!</p>
               )}
             </CartProductsBox>
             {cartItems.length ? (

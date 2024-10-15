@@ -1,84 +1,46 @@
 import styled from "styled-components";
 
-export const FormContactContainer = styled.div`
-  width: 50%;
+export const Form = styled.form`
   display: flex;
-  justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
+  column-gap: 30px;
+  row-gap: 25px;
+  @media (max-width: 600px) {
+    column-gap: 30px;
+    row-gap: 25px;
+    flex-direction: column;
+  }
+  `;
+
+export const FormBox = styled.div`
+  max-width: 580px;
+  display: flex;
   flex-direction: column;
-  gap: 2.5rem;
-  @media (max-width: 800px) {
+  align-items: center;
+  border-bottom: 3px solid var(--white);
+  border-top: 3px solid var(--white);
+  padding: 70px;
+  border-radius: 16px;
+  margin: 0 auto;
+  /* position: static; */
+  background-color: black;
+  /* scale: 0.95; */
+  @media (max-width: 600px) {
+    flex-direction: column;
+    padding: 10px;
     width: 90%;
-    gap: 1.5rem;
-  }
-  @media (max-width: 500px) {
-    width: 80%;
-    gap: 1rem;
   }
 `;
 
-export const FormContactBox = styled.form`
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 1.5rem;
-  max-width: 800px;
-  @media (max-width: 500px) {
-    gap: 1rem;
-  }
-`;
-
-export const FormContactTitle = styled.h1`
-  font-size: 3rem;
+export const FormTitle = styled.h2`
+  align-self: center;
+  font-size: 4rem;
+  font-family: var(--font4);
   text-align: center;
-  color: white;
-  letter-spacing: 1px;
-`;
-
-export const FormContactSubtitle = styled.h2`
-  font-size: 1.3rem;
-  text-align: center;
-  color: white;
-  letter-spacing: 1px;
-`;
-export const InputStyle = styled.input`
-  background: #f5f5f5;
-  border: none;
-  padding: 1rem;
-  width: 100%;
-  border-radius: 5px;
-  font-size: 1.2rem;
-  &:focus {
-    outline: none;
-  }
-`;
-
-export const TextAreaStyle = styled.textarea`
-  background: #f5f5f5;
-  border: none;
-  padding: 1rem;
-  width: 100%;
-  border-radius: 5px;
-  font-size: 1.2rem;
-  &:focus {
-    outline: none;
-  }
-`;
-
-export const ButtonStyle = styled.button`
-  padding: 0.5rem 1rem;
-  border: 1px solid transparent;
-  border-top: 1px solid white;
-  color: white;
-  font-size: 0.7rem;
-  background-color: #131415;
-  transition: all 0.3s ease-in-out;
-  &:hover {
-    cursor: pointer;
-    border-radius: 5px;
-    border: 1px solid white;
-    box-shadow: inset 0 0 0.2rem white, 0 0 0.5rem white;
+  /* font-weight: 700; */
+  margin: 0rem 1rem 4rem 1rem;
+  @media (max-width: 600px) {
+    font-size: 2rem;
   }
 `;

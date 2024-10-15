@@ -6,6 +6,7 @@ import { BsCart3 } from "react-icons/bs";
 import { useDispatch } from "react-redux";
 import { toggleHiddenCart } from "../../Redux/Cart/CartSlice";
 import ModalCheckOut from "../ModalCart/ModalCheckOut/ModalCheckOut";
+import { Link } from "react-router-dom";
 function Header() {
   const dispatch = useDispatch();
   return (
@@ -13,12 +14,13 @@ function Header() {
       <HeaderBackground>
         <HeaderBox>
           <HeaderLogo>
+        <Link to="/">
             <img
               src="https://res.cloudinary.com/ds1lnxkfc/image/upload/v1704469659/motul_u2bxul.svg"
               alt="logo"
             />
+          </Link>
           </HeaderLogo>
-
           <Navbar />
           <BsCart3
             className="cart"

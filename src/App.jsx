@@ -6,6 +6,7 @@ import About from "./pages/About/About";
 import Contact from "./pages/Contact/Contact";
 import { useState } from "react";
 import ThemeContext, { themes } from "./context/context";
+import Modal from "./Components/ModalConfimation/ModalConfirmation";
 
 function App() {
   const [tema, setTema] = useState(themes.close);

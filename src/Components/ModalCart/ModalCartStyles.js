@@ -5,6 +5,18 @@ export const ModalCartBox = styled.div`
   position: absolute;
   top: 0;
   right: 0;
+  animation: appear .3s ease-in-out 0s 1 ;
+  transform-origin: top;
+  @keyframes appear {
+  0%{
+    /* transform: translateX(100%); */
+    transform: scaleY(0);
+  }  
+  100%{
+    transform: scaleY(1);
+  }  
+
+  }
 `;
 export const CartOverlay = styled.span`
   width: 100vw;
