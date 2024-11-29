@@ -3,7 +3,7 @@ import { CardCategoryBox, CardCategoryText } from "./CategoryCardStyls";
 import { useDispatch, useSelector } from "react-redux";
 import {
   filterCategory,
-  getAllProducts,
+  // getAllProducts,
 } from "../../../Redux/Categories/CategorySlice";
 function CategoryCard({ name, category }) {
   const dispatch = useDispatch();

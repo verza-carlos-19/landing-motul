@@ -7,6 +7,8 @@ import Contact from "./pages/Contact/Contact";
 import { useState } from "react";
 import ThemeContext, { themes } from "./context/context";
 import Modal from "./Components/ModalConfimation/ModalConfirmation";
+import Login from "./pages/Login/Login";
+import Register from "./pages/Login/Register";
 
 function App() {
   const [tema, setTema] = useState(themes.close);
@@ -25,6 +27,8 @@ function App() {
               <Route path="productos" element={<Productos />} />
               <Route path="contacto" element={<Contact />} />
             </Route>
+              <Route path="login" element={<Login />} />
+              <Route path="register" element={<Register />} />
           </Routes>
         </BrowserRouter>
       </ThemeContext.Provider>

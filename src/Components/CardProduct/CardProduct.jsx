@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   BoxCard,
   ButtonCard,
@@ -11,10 +11,13 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../../Redux/Cart/CartSlice";
 import { formatPrice } from "../../utils/formatPrice";
+import { Link } from "react-router-dom";
 
 function CardProduct({ id, title, image, price, category }) {
   const dispatch = useDispatch();
   const { cartItems } = useSelector((state) => state.cart);
+  const { user } = useSelector((state) => state.user);
+  const {usuario, setUsuario} = useState(false);
   const prodPrice = formatPrice(price);
   const totalPrice = formatPrice(
     cartItems.reduce((acc, item) => {
@@ -32,7 +35,9 @@ function CardProduct({ id, title, image, price, category }) {
         </ImageBoxCard>
         <PriceCard>{prodPrice}</PriceCard>
         <ButtonsBox>
-          <ButtonCard
+          {
+            user ? (
+              <ButtonCard
             onClick={() => {
               dispatch(addToCart({ image, title, category, price, id }));
               console.log(
@@ -46,7 +51,12 @@ function CardProduct({ id, title, image, price, category }) {
           >
             COMPRAR
           </ButtonCard>
-          <ButtonCard>DETALLES</ButtonCard>
+                ) : (
+                  <Link to={"/login"}><ButtonCard>Login to add to cart</ButtonCard></Link>
+                )
+          }
+          
+          {/* <ButtonCard>DETALLES</ButtonCard> */}
         </ButtonsBox>
       </BoxCard>
     </>

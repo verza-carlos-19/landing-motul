@@ -31,6 +31,11 @@ export const HeaderBox = styled.article`
     }
   }
 `;
+export const RightBoxCartUser = styled.div`
+display: flex;
+gap: 1rem;
+align-items: center;
+`
 export const HeaderLogo = styled.div`
   width: 10%;
   img {

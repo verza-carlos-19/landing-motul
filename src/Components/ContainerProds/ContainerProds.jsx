@@ -5,16 +5,21 @@ import {
   ProductsGallery,
   Title,
 } from "./ContainerProdsStyles";
-import Modal from "../ModalConfimation/ModalConfirmation";
 
-function ContainerProds({ lenght }) {
-  const arrayProp = lenght;
+function ContainerProds({ products }) {
+  const arrayProp = products;
+  // if (!lenght) {
+  //   console.log("no hay productos")
+  //   console.log(lenght)
+  //   return;
+  // }
+
   return (
     <>
       <ProductsContiner>
         <Title>Productos</Title>
         <ProductsGallery>
-          {arrayProp.map((element) => {
+          {products.map((element) => {
             return (
               <CardProduct
                 key={element.id}

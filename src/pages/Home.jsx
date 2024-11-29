@@ -1,14 +1,38 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ContainerProds from "../Components/ContainerProds/ContainerProds";
 import Hero from "../Components/Hero/Hero";
 import { productsData } from "../data/products";
 import CardInfo from "../Components/CardInfo/CardInfo";
 import ButtonSpecial from "../Components/ButtonSpecial/ButtonSpecial";
 import { useSelector } from "react-redux";
+import { getThreeProducts } from "../Axios/productsAxios";
 
 function Home() {
-  const { products } = useSelector((state) => state.categories);
-  const productsRendered = products.short;
+  // const { products } = useSelector((state) => state.categories);
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(true);
+  useEffect(()=>{
+    const fetchProduct = async () => {
+
+      setLoading(true);
+      setError(null);
+
+        try {
+          const productData = await getThreeProducts();
+          setProducts(productData);
+        } catch (err) {
+          setError("Error al cargar el producto");
+          console.error(error);
+        } finally {
+          setLoading(false);
+        }
+      }
+      fetchProduct()
+  },[])
+
+
+  const productsRendered = products;
   return (
     <>
       <Hero
@@ -40,7 +64,9 @@ function Home() {
           "La velocidad a tope del MotoGp siempre va acompañada de un buen aceite motul V300"
         }
       />
-      <ContainerProds lenght={productsRendered} />
+      {
+        loading? <p> productos cargando...</p> : <ContainerProds products={productsRendered} />
+      }
       <ButtonSpecial />
     </>
   );
